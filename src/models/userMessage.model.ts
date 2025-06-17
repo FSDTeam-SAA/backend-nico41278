@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document, Types } from 'mongoose'
 
 export interface IUserMessage extends Document {
+  userId: Types.ObjectId
   agentsId: Types.ObjectId
   userListingId: Types.ObjectId
   message: string
@@ -8,6 +9,7 @@ export interface IUserMessage extends Document {
 
 const UserMessageSchema: Schema = new Schema<IUserMessage>(
   {
+    userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     agentsId: { type: Schema.Types.ObjectId, ref: 'Agent', required: true },
     userListingId: {
       type: Schema.Types.ObjectId,
