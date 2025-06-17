@@ -5,8 +5,9 @@ import catchAsync from '../utils/catchAsync'
 import AppError from '../errors/AppError'
 import { PaymentInfo } from '../models/payment.model'
 import sendResponse from '../utils/sendResponse'
+import config from '../config/config'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+const stripe = new Stripe(config.stripe.stripe_secret_key as string, {
   apiVersion: '2025-05-28.basil',
 })
 
