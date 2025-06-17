@@ -6,7 +6,7 @@ import {
 
 const router = express.Router()
 
-router.post('/create-payment', createPayment)
-router.post('/confirm-payment', confirmPayment)
+router.post('/payment/create-payment', createPayment)
+router.post('/payment/confirm-payment', confirmPayment)
 
 export default router
