@@ -12,7 +12,6 @@ export interface ISubscription extends Document {
   emailLimit: number
   feature: ISubscriptionFeature[]
   bestChoice: boolean
-  buttonName: string
 }
 
 const SubscriptionSchema: Schema = new Schema<ISubscription>(
@@ -28,7 +27,6 @@ const SubscriptionSchema: Schema = new Schema<ISubscription>(
       },
     ],
     bestChoice: { type: Boolean, default: false },
-    buttonName: { type: String },
   },
   { timestamps: true }
 )
