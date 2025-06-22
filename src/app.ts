@@ -5,7 +5,7 @@ import { notFound } from './middlewares/notFound'
 
 import paymentRoutes from './routes/payment.route'
 import subscriptionRoute from './routes/subscription.routes'
-import newsletterRoutes from './routes/subscription.routes'
+import newsletterRoutes from './routes/newsLetter.route'
 import agentRoutes from './routes/agent.routes'
 import userListingRoutes from './routes/userListing.routes'
 import userMessageRoutes from './routes/userMessage.routes'

@@ -6,13 +6,14 @@ import {
   updateMessage,
   deleteMessage,
 } from '../controllers/userMessage.controller'
+import { protect } from '../middlewares/auth.middleware'
 
 const router = express.Router()
 
-router.post('/user-messages', createUserMessage)
-router.get('/user/messages/:userId', getMessagesByUserId)
-router.get('/user-messages/:id', getSingleMessage)
-router.put('/user-messages/:id', updateMessage)
-router.delete('/user-messages/:id', deleteMessage)
+router.post('/user-messages', protect, createUserMessage)
+router.get('/user/messages/:userId', protect,getMessagesByUserId)
+router.get('/user-messages/:id',protect, getSingleMessage)
+router.put('/user-messages/:id',protect, updateMessage)
+router.delete('/user-messages/:id',protect, deleteMessage)
 
 export default router
